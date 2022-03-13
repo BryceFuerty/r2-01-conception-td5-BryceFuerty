@@ -13,6 +13,7 @@ usecase "salaire horaire " as GARTS
 usecase " coordonnées" as GARTC
 
 usecase " salaire total" as START
+usecase "chantier artisan" as ARTCHART
 }
 entreprise --> GCH
 
@@ -26,5 +27,8 @@ GART <.. GARTS : <<extend
 GART <.. GARTC : <<extend 
 GARTS ..> START
 artisan --> START 
+artisan --> ARTCHART
+ MDDCH <-- ARTCHART 
+MDFCH <-- ARTCHART
 
 @enduml
